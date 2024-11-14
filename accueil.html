@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accueil</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+ <style>
+#searchForm {
+    display: flex; 
+    align-items: center; 
+}
+
+#searchInput {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+#searchInput:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.formContainer label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.formContainer input,
+.formContainer textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formContainer input[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formContainer input[type="submit"]:hover {
+    background-color: #45a049;
+}
+    </style>
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+              <img src="Tupperware.png" alt="photo header">
+           </div>
+          <nav>
+                <ul>
+              <li><a href="accueil.html">Accueil</a></li>
+                   <li><a href="A propos.html">À propos</a></li>
+                   <li class="dropdown">
+                    <a href="produits.php">Catalogue</a>
+                    <ul class="dropdown-content">
+                    <li><a href="produitsNormaux.php">Produits normaux</a></li>
+                     <li><a href="produitsBébé.php">Produits pour bébé</a></li>
+                     <li><a href="offreSpeciale.php">des offres spéciales</a></li>
+                    </ul>
+                </li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <form id="searchForm" action="RechercherPoduit.php" method="post">
+                    <input id="searchInput"type="text" name="code" placeholder="Rechercher...">
+                </form>
+                <li class="right-align"><a href="#panier"><i class="fas fa-shopping-cart"></i> Panier</a></li>
+                <li class="right-align"><a href="login.html"><i class="fas fa-user"></i> login</a></li>
+                  </ul>
+                   </nav>
+                   <h1 style="color: #414242">Vivez en couleur avec Tupperware</h1>
+                 </header>
+                 <div class="content">
+                    <a href="A propos.html">
+                        <img src="Image.jpg" alt="photo d'Accueil">
+                    </a>
+                    <button onclick="window.location.href= 'produits.php'">Catalogue</button>
+                </div>
+                <div class="autre">
+                    <a href="contact.html">
+                        <img src="Photo.jpg" alt="photo d'Accueil">
+                    </a>
+                    <button onclick="window.location.href='contact.html'">Contact</button>
+                </div>
+                <div class="container">
+                    <div class="formContainer">
+                        <form action="insertion.php" method="post">
+                          <label for="code">Code :</label>
+                          <input type="text" id="code" name="code" required><br><br>
+                          
+                          <label for="image">image:</label>
+                          <input type="file" id="image" name="image" required><br><br>
+  
+                          <label for="nom">Nom :</label>
+                          <input type="text" id="nom" name="nom" required><br><br>
+                          
+                          <label for="description">Description :</label>
+                          <textarea id="description" name="description" required></textarea><br><br>
+                          
+                          <label for="forme">Forme :</label>
+                          <input type="text" id="forme" name="forme" required><br><br>
+                          
+                          <label for="motif">Motif :</label>
+                          <input type="text" id="motif" name="motif" ><br><br>
+                          
+                          <label for="prix">Prix :</label>
+                          <input type="number" id="prix" name="prix" step="0.01" required><br><br>
+                          
+                          <label for="color">Couleur :</label>
+                          <input type="text" id="color" name="color"><br><br>
+                          
+                          <label for="categorie_id">Catégorie ID :</label>
+                          <input type="number" id="categorie_id" name="categorie_id" required><br><br>
+                          
+                          <input style="font-weight: bolder;" type="submit" value="Ajouter un produit">
+                        </form>
+                    </div>
+                </div>
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="A propos.html">À propos</a></li>
+                <li><a href="produits.php">Catalogue</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>© 2024 Dart Industries Inc. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/TupperwareBrandsCorp?locale=fr_FR" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/tupperwarebrandsph/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/tupperware-brands-argentina-s-a-/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
